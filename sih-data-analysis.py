@@ -218,7 +218,7 @@ class SIHAnalyzer:
 
 
 def main():
-    analyzer = SIHAnalyzer("sih_data.csv")
+    analyzer = SIHAnalyzer("combined_sih_data.csv")
 
     print("\nBasic Statistics:")
     stats = analyzer.basic_stats()

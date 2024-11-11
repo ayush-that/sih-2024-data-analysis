@@ -50,6 +50,7 @@ def main():
     urls = [
         "https://www.sih.gov.in/screeningresult",
         "https://www.sih.gov.in/screeningresult_batch_two",
+        "https://sih.gov.in/screeningresult_batch_three",
     ]
 
     all_data = []
@@ -62,6 +63,8 @@ def main():
 
     if all_data:
         combined_df = pd.concat(all_data, ignore_index=True)
+        combined_df.to_csv("combined_sih_data.csv", index=False)
+        combined_df.to_json("combined_sih_data.json", orient="records")
         print("\nData scraping successful!")
         print("\nShape of combined data:", combined_df.shape)
         print("\nFirst few rows:")
